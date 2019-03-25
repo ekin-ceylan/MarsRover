@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AFED6C3C-ABC1-4448-A663-3837C1526763}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MarsRover.Business</RootNamespace>
+    <AssemblyName>MarsRover.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\IRoverCommand.cs" />
+    <Compile Include="Abstract\ICoordinate.cs" />
+    <Compile Include="Abstract\OrientationState.cs" />
+    <Compile Include="Abstract\IRover.cs" />
+    <Compile Include="Abstract\IPlateau.cs" />
+    <Compile Include="Concrete\Commands\MoveForward.cs" />
+    <Compile Include="Concrete\Commands\TurnLeft.cs" />
+    <Compile Include="Concrete\Commands\TurnRight.cs" />
+    <Compile Include="Concrete\Coordinate.cs" />
+    <Compile Include="Concrete\Orientations\South.cs" />
+    <Compile Include="Enum\Command.cs" />
+    <Compile Include="Concrete\Orientations\East.cs" />
+    <Compile Include="Concrete\Orientations\North.cs" />
+    <Compile Include="Concrete\Plateau.cs" />
+    <Compile Include="Concrete\Rover.cs" />
+    <Compile Include="Concrete\Orientations\West.cs" />
+    <Compile Include="Enum\Orientation.cs" />
+    <Compile Include="Helper\CommandHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
